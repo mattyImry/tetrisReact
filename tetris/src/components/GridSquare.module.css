@@ -1,0 +1,47 @@
+/* Grid Square */
+.gridsquare {
+    border-style: solid;
+    width: 20px;
+    height: 20px;
+    border-width: 5px;
+    border-left-color: rgba(255, 255, 255, 0.20);
+    border-top-color: rgba(255, 255, 255, 0.33);
+    border-right-color: rgba(0, 0, 0, 0.15);
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Colors */
+  .color_0 {
+    background-color: #eaeaea;
+  }
+  
+  .color_1 {
+    background-color: #ff6600;
+  }
+  
+  .color_2 {
+    background-color: #eec900;
+  }
+  
+  .color_3 {
+    background-color: #0000ff;
+  }
+  
+  .color_4 {
+    background-color: #cc00ff;
+  }
+  
+  .color_5 {
+    background-color: #00ff00;
+  }
+  
+  .color_6 {
+    background-color: #66ccff;
+  }
+  
+  .color_7 {
+    background-color: #ff0000;
+  }
+  
+  
+  
