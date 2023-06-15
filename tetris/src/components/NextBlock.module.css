@@ -1,0 +1,5 @@
+.next_block {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    align-self: flex-start;
+  }
