@@ -1,6 +1,7 @@
 import classes from "./App.module.css";
 import Controls from "./components/Controls";
 import GridBoard from "./components/GridBoard";
+import MessagePopup from "./components/MessagePopup";
 import NextBlock from "./components/NextBlock";
 import ScoreBoard from "./components/ScoreBoard";
 
@@ -14,6 +15,7 @@ function App() {
       <NextBlock />
       <ScoreBoard />
       <Controls />
+      <MessagePopup />
     </div>
   );
 }
