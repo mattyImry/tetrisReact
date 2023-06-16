@@ -1,0 +1,9 @@
+.score_board_button {
+    display: block;
+    padding: 1em;
+    border-width: 5px;
+    border-top-color: rgba(200, 200, 200, 1);;
+    border-left-color: rgba(222, 222, 222, 1);;
+    border-right-color: rgba(150, 150, 150, 1);
+    border-bottom-color: rgba(120, 120, 120, 1);
+  }
