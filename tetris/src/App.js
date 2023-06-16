@@ -1,4 +1,5 @@
 import classes from "./App.module.css";
+import Controls from "./components/Controls";
 import GridBoard from "./components/GridBoard";
 import NextBlock from "./components/NextBlock";
 import ScoreBoard from "./components/ScoreBoard";
@@ -12,6 +13,7 @@ function App() {
       <GridBoard />
       <NextBlock />
       <ScoreBoard />
+      <Controls />
     </div>
   );
 }
