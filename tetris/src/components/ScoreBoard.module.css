@@ -7,3 +7,7 @@
     border-right-color: rgba(150, 150, 150, 1);
     border-bottom-color: rgba(120, 120, 120, 1);
   }
+
+  .score_board {
+    grid-area: r;
+  }
