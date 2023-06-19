@@ -3,6 +3,7 @@
 import classes from "./GridSquare.module.css";
 
 const GridSquare = (props) => {
+  //color injected by prop
   const cssColor = `color_${props.color}`;
   return <div className={`${classes.gridsquare} ${classes[cssColor]}`}></div>;
 };

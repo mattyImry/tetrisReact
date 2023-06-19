@@ -1,3 +1,5 @@
+//4 by 4 grid tha show next block coming in 
+
 import GridSquare from "./GridSquare";
 import classes from "./NextBlock.module.css"
 

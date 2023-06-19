@@ -1,3 +1,5 @@
+//setting control for the game
+
 import classes from "./Controls.module.css";
 
 const Controls = (props) => {

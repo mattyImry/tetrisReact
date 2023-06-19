@@ -1,3 +1,5 @@
+//score board to display score and main control
+
 import classes from "./ScoreBoard.module.css";
 
 const ScoreBoard = (props) => {
