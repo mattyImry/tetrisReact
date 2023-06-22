@@ -9,7 +9,7 @@ import classes from "./GridBoard.module.css";
 const GridBoard = (props) => {
   const game = useSelector((state) => state.game);
   const { grid, shape, rotation, x, y, isRunning, speed } = game;
-  console.log(game);
+
   const block = shapes[shape][rotation];
   const blockColor = shape;
   const gridSquares = grid.map((rowArray, row) => {
