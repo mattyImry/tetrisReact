@@ -1,16 +1,39 @@
 //score board to display score and main control
 
 import classes from "./ScoreBoard.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { pause, resume, restart } from "../actions";
 
 const ScoreBoard = (props) => {
+  const dispatch = useDispatch();
+  const game = useSelector((state) => state.game);
+  const { score, isRunning, gameOver } = game;
+
   return (
     <div className="score_board">
-      <div>Score:{props.score}</div>
+      <div>Score:{score}</div>
       <div>Level: 1</div>
-      <button className={classes.score_board_button} onClick={(e) => {}}>
-        Play
+      <button
+        className={classes.score_board_button}
+        onClick={(e) => {
+          if (gameOver) {
+            return;
+          }
+          if (isRunning) {
+            dispatch(pause());
+          } else {
+            dispatch(resume());
+          }
+        }}
+      >
+        {isRunning ? "Pause" : "Play"}
       </button>
-      <button className={classes.score_board_button} onClick={(e) => {}}>
+      <button
+        className={classes.score_board_button}
+        onClick={(e) => {
+          dispatch(restart());
+        }}
+      >
         Restart
       </button>
     </div>
