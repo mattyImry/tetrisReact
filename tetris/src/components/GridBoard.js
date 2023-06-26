@@ -1,12 +1,17 @@
 // setting the grid for the game
-import { useSelector } from "react-redux";
+import React, { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { moveDown } from "../actions";
 import { shapes } from "../utils";
-import React from "react";
 
 import GridSquare from "./GridSquare";
 import classes from "./GridBoard.module.css";
 
 const GridBoard = (props) => {
+  const requestRef = useRef();
+  const lastUpdateTimeRef = useRef(0);
+  const progressTimeRef = useRef(0);
+  const dispatch = useDispatch();
   const game = useSelector((state) => state.game);
   const { grid, shape, rotation, x, y, isRunning, speed } = game;
 
