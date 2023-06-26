@@ -12,6 +12,24 @@ const GridBoard = (props) => {
   const lastUpdateTimeRef = useRef(0);
   const progressTimeRef = useRef(0);
   const dispatch = useDispatch();
+
+  const update = (time) => {
+    requestRef.current = requestAnimationFrame(update);
+    if (!isRunning) {
+      return;
+    }
+    if (!lastUpdateTimeRef.current) {
+      lastUpdateTimeRef.current = time;
+    }
+    const deltaTime = time - lastUpdateTimeRef.current;
+    progressTimeRef.current += deltaTime;
+    if (progressTimeRef.current > speed) {
+      dispatch(moveDown());
+      progressTimeRef.current = 0;
+    }
+    lastUpdateTimeRef.current = time;
+  };
+
   const game = useSelector((state) => state.game);
   const { grid, shape, rotation, x, y, isRunning, speed } = game;
 
