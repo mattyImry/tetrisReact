@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { moveDown, moveLeft, moveRight, rotate } from "../actions";
 import classes from "./Controls.module.css";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 
 const Controls = (props) => {
   const dispatch = useDispatch();

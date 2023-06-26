@@ -21,7 +21,9 @@ const NextBlock = (props) => {
     });
   });
 
-  return <div className={classes.next_block}>{grid}</div>;
+  return <div className={classes.next_block}>{grid}
+    
+  </div>;
 };
 
 export default NextBlock;

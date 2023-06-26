@@ -11,20 +11,18 @@ const ScoreBoard = (props) => {
   const { score, isRunning, gameOver } = game;
 
   useEffect(() => {
-    function handleKeyGame(e) {
+    function handleKeyPause(e) {
       if (e.keyCode === 13 && isRunning) {
         dispatch(pause());
       } else {
         dispatch(resume());
       }
-
-      console.log(e.keyCode);
     }
 
-    document.addEventListener("keydown", handleKeyGame);
+    document.addEventListener("keydown", handleKeyPause);
 
     return function cleanup() {
-      document.removeEventListener("keydown", handleKeyGame);
+      document.removeEventListener("keydown", handleKeyPause);
     };
   });
 
@@ -55,6 +53,16 @@ const ScoreBoard = (props) => {
       >
         Restart
       </button>
+      <div className={classes.keys}>
+          
+          <p>Left: &#x2190;</p>
+          <p>Right: &#x2192;</p>
+          <p>Up: &#x2191;</p>
+          <p>Down: &#x2193;</p>
+          <p>Rotate: Space bar</p>
+          <p>Pause/Start: Enter</p>
+        </div>
+      
     </div>
   );
 };
