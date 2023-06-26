@@ -13,6 +13,14 @@ const GridBoard = (props) => {
   const progressTimeRef = useRef(0);
   const dispatch = useDispatch();
 
+  const game = useSelector((state) => state.game);
+  const { grid, shape, rotation, x, y, isRunning, speed } = game;
+
+  useEffect(() => {
+    requestRef.current = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(requestRef.current);
+  }, [isRunning]);
+
   const update = (time) => {
     requestRef.current = requestAnimationFrame(update);
     if (!isRunning) {
@@ -29,9 +37,6 @@ const GridBoard = (props) => {
     }
     lastUpdateTimeRef.current = time;
   };
-
-  const game = useSelector((state) => state.game);
-  const { grid, shape, rotation, x, y, isRunning, speed } = game;
 
   const block = shapes[shape][rotation];
   const blockColor = shape;
