@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const Controls = (props) => {
   const dispatch = useDispatch();
-  const isRunning = useSelector((state) => state.isRunning);
+  // const isRunning = useSelector((state) => state.isRunning);
 
   useEffect(() => {
     function handleKeyDown(e) {
@@ -26,13 +26,10 @@ const Controls = (props) => {
       if (e.keyCode === 32) {
         dispatch(rotate());
       }
-
-      // console.log(e.keyCode);
     }
 
     document.addEventListener("keydown", handleKeyDown);
 
-    // Don't forget to clean up
     return function cleanup() {
       document.removeEventListener("keydown", handleKeyDown);
     };

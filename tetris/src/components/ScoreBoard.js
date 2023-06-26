@@ -3,11 +3,30 @@
 import classes from "./ScoreBoard.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { pause, resume, restart } from "../actions";
+import { useEffect } from "react";
 
 const ScoreBoard = (props) => {
   const dispatch = useDispatch();
   const game = useSelector((state) => state.game);
   const { score, isRunning, gameOver } = game;
+
+  useEffect(() => {
+    function handleKeyGame(e) {
+      if (e.keyCode === 13 && isRunning) {
+        dispatch(pause());
+      } else {
+        dispatch(resume());
+      }
+
+      console.log(e.keyCode);
+    }
+
+    document.addEventListener("keydown", handleKeyGame);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", handleKeyGame);
+    };
+  });
 
   return (
     <div className="score_board">
