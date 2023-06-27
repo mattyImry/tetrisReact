@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { moveDown, moveLeft, moveRight, rotate } from "../actions";
 import classes from "./Controls.module.css";
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 
 const Controls = (props) => {
   const dispatch = useDispatch();
-  // const isRunning = useSelector((state) => state.isRunning);
+  const isRunning = useSelector((state) => state.game.isRunning);
+  const gameOver = useSelector((state) => state.game.gameOver);
 
   useEffect(() => {
     function handleKeyDown(e) {
@@ -38,8 +39,12 @@ const Controls = (props) => {
   return (
     <div className={classes.controls}>
       <button
+        disabled={!isRunning || gameOver}
         className={classes.control_button}
         onClick={(e) => {
+          if (!isRunning || gameOver) {
+            return;
+          }
           dispatch(moveLeft());
         }}
       >
@@ -48,7 +53,11 @@ const Controls = (props) => {
 
       <button
         className={classes.control_button}
+        disabled={!isRunning || gameOver}
         onClick={(e) => {
+          if (!isRunning || gameOver) {
+            return;
+          }
           dispatch(moveRight());
         }}
       >
@@ -57,7 +66,11 @@ const Controls = (props) => {
 
       <button
         className={classes.control_button}
+        disabled={!isRunning || gameOver}
         onClick={(e) => {
+          if (!isRunning || gameOver) {
+            return;
+          }
           dispatch(rotate());
         }}
       >
@@ -66,7 +79,11 @@ const Controls = (props) => {
 
       <button
         className={classes.control_button}
+        disabled={!isRunning || gameOver}
         onClick={(e) => {
+          if (!isRunning || gameOver) {
+            return;
+          }
           dispatch(moveDown());
         }}
       >
