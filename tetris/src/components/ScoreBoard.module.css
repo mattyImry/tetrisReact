@@ -11,10 +11,16 @@
   .score_board {
     grid-area: r;
   }
+  .keys{
+    margin-top: 15px;
+  }
   .keys p{
     display: flex;
     flex-direction: column;
     margin-top: 2px;
     font-weight: bolder;
     
+  }
+  .keys p span{
+    font-weight: 100;
   }

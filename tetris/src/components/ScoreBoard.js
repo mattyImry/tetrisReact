@@ -59,8 +59,8 @@ const ScoreBoard = (props) => {
           <p>Right: &#x2192;</p>
           <p>Up: &#x2191;</p>
           <p>Down: &#x2193;</p>
-          <p>Rotate: Space bar</p>
-          <p>Pause/Start: Enter</p>
+          <p>Rotate: <span>Space bar</span></p>
+          <p>Pause/Start: <span>Enter</span></p>
         </div>
       
     </div>
