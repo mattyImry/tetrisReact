@@ -10,33 +10,34 @@ const Controls = (props) => {
   const isRunning = useSelector((state) => state.game.isRunning);
   const gameOver = useSelector((state) => state.game.gameOver);
 
-  // useEffect(() => {
-  //   function handleKeyDown(e) {
-  //     if (e.keyCode === 37) {
-  //       return;
-  //     }else (!isRunning || gameOver) {
-  //       dispatch(moveLeft());
-  //     }
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (!isRunning || gameOver) {
+        return;
+      }
+      if (e.keyCode === 37) {
+        dispatch(moveLeft());
+      }
 
-  //     if (e.keyCode === 39 && (!isRunning || gameOver)) {
-  //       dispatch(moveRight());
-  //     }
+      if (e.keyCode === 39) {
+        dispatch(moveRight());
+      }
 
-  //     if (e.keyCode === 40 && (!isRunning || gameOver)) {
-  //       dispatch(moveDown());
-  //     }
+      if (e.keyCode === 40) {
+        dispatch(moveDown());
+      }
 
-  //     if (e.keyCode === 32 && (!isRunning || gameOver)) {
-  //       dispatch(rotate());
-  //     }
-  //   }
+      if (e.keyCode === 32) {
+        dispatch(rotate());
+      }
+    }
 
-  //   document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
 
-  //   return function cleanup() {
-  //     document.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // });
+    return function cleanup() {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  });
 
   return (
     <div className={classes.controls}>
