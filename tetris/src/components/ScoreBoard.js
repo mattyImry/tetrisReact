@@ -1,6 +1,14 @@
 //score board to display score and main control
 
 import classes from "./ScoreBoard.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUp,
+  faArrowRight,
+  faArrowLeft,
+  faArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
+
 import { useSelector, useDispatch } from "react-redux";
 import { pause, resume, restart } from "../actions";
 import { useEffect } from "react";
@@ -54,15 +62,25 @@ const ScoreBoard = (props) => {
         Restart
       </button>
       <div className={classes.keys}>
-          
-          <p>Left: &#x2190;</p>
-          <p>Right: &#x2192;</p>
-          <p>Up: &#x2191;</p>
-          <p>Down: &#x2193;</p>
-          <p>Rotate: <span>Space bar</span></p>
-          <p>Pause/Start: <span>Enter</span></p>
-        </div>
-      
+        <p>
+          Left: <FontAwesomeIcon icon={faArrowLeft} />
+        </p>
+        <p>
+          Right: <FontAwesomeIcon icon={faArrowRight} />
+        </p>
+        <p>
+          Up: <FontAwesomeIcon icon={faArrowUp} />
+        </p>
+        <p>
+          Down: <FontAwesomeIcon icon={faArrowDown} />
+        </p>
+        <p>
+          Rotate: <span>Space bar</span>
+        </p>
+        <p>
+          Pause/Start: <span>Enter</span>
+        </p>
+      </div>
     </div>
   );
 };

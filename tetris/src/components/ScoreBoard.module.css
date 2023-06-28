@@ -21,6 +21,6 @@
     font-weight: bolder;
     
   }
-  .keys p span{
-    font-weight: 100;
+  .keys svg{
+    margin-top: 5px;
   }
