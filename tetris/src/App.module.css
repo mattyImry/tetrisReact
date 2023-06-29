@@ -17,7 +17,7 @@
 .App {
   --col-side: calc(20px * 4);
   --col-center: calc(20px * 10);
-  --grid-height: calc(20px * 18);
+  /* --grid-height: calc(20px * 18); */
 
   width: calc(20px * (4 + 1 + 10 + 1 + 4));
   margin: auto;
@@ -27,11 +27,13 @@
   /* Defines three columns of `--col-side`, `--col-center`, and `--col-side` widths. */
   grid-template-columns: var(--col-side) var(--col-center) var(--col-side);
   /* Defines three rows of `100px`, `--grid-height`, and 100px. */
-  grid-template-rows: 100px var(--grid-height) 100px;
+  grid-template-rows: 100px auto-fill 100px 100px;
+  
 
 /* This defines the areas on the grid with names: 'h', 'l', 'c', 'r',
 and 'b'. The '.' represents an empty cell on the grid. */
   grid-template-areas: "h h h"
                        "l c r"
-                       ". b .";
+                       ". b ."
+                       "j j j";
 }
