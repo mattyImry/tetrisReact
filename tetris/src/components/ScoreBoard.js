@@ -18,21 +18,21 @@ const ScoreBoard = (props) => {
   const game = useSelector((state) => state.game);
   const { score, isRunning, gameOver } = game;
 
-  useEffect(() => {
-    function handleKeyPause(e) {
-      if (e.keyCode === 13 && isRunning) {
-        dispatch(pause());
-      } else {
-        dispatch(resume());
-      }
-    }
+  // useEffect(() => {
+  //   function handleKeyPause(e) {
+  //     if (e.keyCode === 13 && isRunning) {
+  //       dispatch(pause());
+  //     } else {
+  //       dispatch(resume());
+  //     }
+  //   }
 
-    document.addEventListener("keydown", handleKeyPause);
+  //   document.addEventListener("keydown", handleKeyPause);
 
-    return function cleanup() {
-      document.removeEventListener("keydown", handleKeyPause);
-    };
-  });
+  //   return function cleanup() {
+  //     document.removeEventListener("keydown", handleKeyPause);
+  //   };
+  // });
 
   return (
     <div className="score_board">
