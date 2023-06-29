@@ -61,7 +61,7 @@ const ScoreBoard = (props) => {
       >
         Restart
       </button>
-      <div className={classes.keys}>
+      {/* <div className={classes.keys}>
         <p>
           Left: <FontAwesomeIcon icon={faArrowLeft} />
         </p>
@@ -80,7 +80,7 @@ const ScoreBoard = (props) => {
         <p>
           Pause/Start: <span>Enter</span>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
