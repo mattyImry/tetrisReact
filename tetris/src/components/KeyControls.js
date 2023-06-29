@@ -1,4 +1,11 @@
 import classes from "./KeyControls.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUp,
+  faArrowRight,
+  faArrowLeft,
+  faArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 const KeyControls = () => {
   return (

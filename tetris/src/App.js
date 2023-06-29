@@ -9,6 +9,7 @@ import GridBoard from "./components/GridBoard";
 import MessagePopup from "./components/MessagePopup";
 import NextBlock from "./components/NextBlock";
 import ScoreBoard from "./components/ScoreBoard";
+import KeyControls from "./components/KeyControls";
 
 const store = createStore(reducers);
 
@@ -24,6 +25,7 @@ function App() {
         <ScoreBoard />
         <Controls />
         <MessagePopup />
+        <KeyControls />
       </div>
     </Provider>
   );
